@@ -1,4 +1,4 @@
-'use client'; // Penting! Karena SessionProvider menggunakan React Context (hook)
+'use client'; 
 
 import { SessionProvider } from 'next-auth/react';
 
