@@ -28,7 +28,6 @@ body {
   padding: 0 24px;
 }
 
-/* 2. Styling Komponen Navbar */
 .navbar {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -52,7 +51,7 @@ body {
 }
 
 .nav-links {
-  display: none; /* Sembunyikan di mobile */
+  display: none; 
 }
 
 @media (min-width: 768px) {
@@ -88,7 +87,6 @@ body {
 }
 
 
-/* 3. Styling Komponen Hero */
 .hero-section {
   background-color: var(--bg-light-accent);
   padding: 5rem 0;
@@ -154,7 +152,6 @@ body {
 }
 
 
-/* 4. Styling Komponen Services */
 .services-section {
   padding: 5rem 0;
   text-align: center;
@@ -215,7 +212,6 @@ body {
 }
 
 
-/* 5. Styling Komponen CTA */
 .cta-section {
   background-color: #f9fafb;
   padding: 5rem 0;
@@ -272,7 +268,6 @@ body {
 }
 
 
-/* 6. Styling Komponen Footer */
 .footer {
   background-color: var(--bg-dark);
   color: white;
@@ -310,19 +305,18 @@ body {
   font-size: 0.875rem;
 }
 
-/* 7. Styling untuk Halaman Login & Register */
 .auth-layout {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f9fafb; /* Latar belakang abu-abu muda */
+  background-color: #f9fafb; 
 }
 
 .auth-card {
   background-color: white;
   padding: 2.5rem;
-  border-radius: 1.25rem; /* Sudut lebih membulat */
+  border-radius: 1.25rem; 
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   width: 100%;
   max-width: 450px;
@@ -347,7 +341,7 @@ body {
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* Jarak antar input */
+  gap: 1.25rem; 
 }
 
 .form-group {
@@ -360,12 +354,12 @@ body {
   left: 1rem;
   transform: translateY(-50%);
   color: var(--text-light);
-  pointer-events: none; /* Agar ikon tidak bisa diklik */
+  pointer-events: none; 
 }
 
 .form-input {
   width: 100%;
-  padding: 0.8rem 1rem 0.8rem 3rem; /* Padding kiri untuk ikon */
+  padding: 0.8rem 1rem 0.8rem 3rem; 
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   font-family: 'Poppins', sans-serif;
@@ -379,7 +373,6 @@ body {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 40%, transparent);
 }
 
-/* Menggunakan kembali style .btn yang sudah ada */
 .auth-form .btn {
   width: 100%;
   margin-top: 1rem;
