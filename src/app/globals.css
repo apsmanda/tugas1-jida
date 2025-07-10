@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #d4b2ff;
+  --accent-color: #a78bfa;
+  --bg-light-accent: #f5f3ff;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --border-color: #e5e7eb;
+  --bg-dark: #111827; 
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 2. Styling Komponen Navbar */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.nav-links {
+  display: none; /* Sembunyikan di mobile */
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-light);
+}
+.nav-links a:hover {
+  color: var(--text-dark);
+}
+
+.nav-button {
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.nav-button:hover {
+  opacity: 0.9;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+
+/* 3. Styling Komponen Hero */
+.hero-section {
+  background-color: var(--bg-light-accent);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.hero-subtitle {
+  color: var(--text-light);
+  margin-top: 1rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-filled {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+.btn-filled:hover {
+  opacity: 0.9;
+  background-color: var(--accent-color);
+  color: var(--text-dark);
+}
+
+.btn-outline {
+  background-color: white;
+  color: var(--text-dark);
+  border-color: var(--border-color);
+}
+.btn-outline:hover {
+  background-color: #f9fafb;
+}
+
+
+/* 4. Styling Komponen Services */
+.services-section {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.service-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  transition: box-shadow 0.3s;
+  text-align: left;
+}
+.service-card:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.service-card .icon {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.service-card p {
+  color: var(--text-light);
+}
+
+
+/* 5. Styling Komponen CTA */
+.cta-section {
+  background-color: #f9fafb;
+  padding: 5rem 0;
+}
+.cta-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  padding: 2rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.cta-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .cta-form {
+    flex-direction: row;
+  }
+}
+.cta-form input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+}
+.cta-form button {
+  margin-top: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cta-form button:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+@media (min-width: 640px) {
+  .cta-form button {
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+}
+.cta-card .disclaimer {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+
+/* 6. Styling Komponen Footer */
+.footer {
+  background-color: var(--bg-dark);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+.footer h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.footer .tagline {
+  margin-top: 1rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #9ca3af;
+}
+.footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.footer .social-links a {
+  color: #9ca3af;
+}
+.footer .social-links a:hover {
+  color: white;
+}
+.footer .copyright {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #374151;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* 7. Styling untuk Halaman Login & Register */
+.auth-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f9fafb; /* Latar belakang abu-abu muda */
+}
+
+.auth-card {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 1.25rem; /* Sudut lebih membulat */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.auth-card .header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.auth-subtitle {
+  margin-top: 0.5rem;
+  color: var(--text-light);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Jarak antar input */
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none; /* Agar ikon tidak bisa diklik */
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3rem; /* Padding kiri untuk ikon */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+/* Menggunakan kembali style .btn yang sudah ada */
+.auth-form .btn {
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.auth-link-container {
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.auth-link {
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}

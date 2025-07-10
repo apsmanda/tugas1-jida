@@ -1,0 +1,86 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Model Pengguna (User)
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique // Email sekarang unik untuk seluruh sistem
+  fullName  String
+  password  String
+  role      Role     @default(Guest) // Default role saat mendaftar
+  createdAt DateTime @default(now())
+
+  // Relasi
+  profile       EmployeeProfile?
+  leaveRequests LeaveRequest[]
+
+  @@map("users")
+}
+
+// Model Departemen
+model Department {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+
+  employees EmployeeProfile[] // Satu departemen punya banyak karyawan
+
+  @@map("departments")
+}
+
+// Model Profil Karyawan
+model EmployeeProfile {
+  id               String    @id @default(cuid())
+  employeeIdNumber String?
+  position         String?
+  joinDate         DateTime?
+  updatedAt        DateTime  @updatedAt
+
+  // Relasi one-to-one dengan User
+  userId     String      @unique
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Relasi dengan Departemen
+  departmentId String?
+  department   Department? @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+
+  @@map("employee_profiles")
+}
+
+// Model Permintaan Cuti
+model LeaveRequest {
+  id        String      @id @default(cuid())
+  startDate DateTime
+  endDate   DateTime
+  reason    String
+  status    LeaveStatus @default(PENDING)
+  createdAt DateTime    @default(now())
+
+  // Relasi dengan User
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("leave_requests")
+}
+
+// Enum untuk Peran (Role) Pengguna yang baru
+enum Role {
+  Owner
+  Guest
+  HRManager
+  HRStaff
+  Admin
+}
+
+// Enum untuk Status Cuti
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
