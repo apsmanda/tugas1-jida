@@ -55,7 +55,6 @@ model LeaveRequest {
   status    LeaveStatus @default(PENDING)
   createdAt DateTime    @default(now())
 
-  // Relasi dengan User
   userId String
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
